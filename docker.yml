@@ -26,13 +26,6 @@
       name: docker-ce
       state: latest
      become: yes
-   - name: Create the User
-     user:
-      name: " {{ item }}"
-      groups: docker
-      state: present
-     with_items:
-      - srikanth
    - name: Start the Docker Service
      service:
        name: docker
